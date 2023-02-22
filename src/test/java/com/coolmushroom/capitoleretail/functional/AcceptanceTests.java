@@ -1,4 +1,4 @@
-package com.coolmushroom.capitoleretail.acceptance;
+package com.coolmushroom.capitoleretail.functional;
 
 import com.coolmushroom.capitoleretail.BaseTest;
 import com.coolmushroom.capitoleretail.controller.request.GetPriceRequest;

@@ -2,7 +2,9 @@ package com.coolmushroom.capitoleretail.core.usecase;
 
 import com.coolmushroom.capitoleretail.controller.request.GetPriceRequest;
 import com.coolmushroom.capitoleretail.controller.response.GetPriceResponse;
+import com.coolmushroom.capitoleretail.core.entity.Brand;
 import com.coolmushroom.capitoleretail.core.entity.Price;
+import com.coolmushroom.capitoleretail.core.exception.InvalidModel;
 import com.coolmushroom.capitoleretail.repository.PriceRepo;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +26,8 @@ public class GetPrice {
                 p -> GetPriceResponse
                         .builder()
                         .productId(p.getProductId())
-                        .brandId(p.getBrand().getId())
+                        // Avoid NPE on composite Brand class
+                        .brandId(Optional.ofNullable(p.getBrand()).map(Brand::getId).orElseThrow(() -> new InvalidModel("Brand can't be null")))
                         .priceId(p.getId())
                         .startDate(p.getStartDate())
                         .endDate(p.getEndDate())

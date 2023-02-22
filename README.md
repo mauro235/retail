@@ -20,6 +20,12 @@
 - I have used 2 decimal digits for storing the price but could be whatever precision required
 - I didn't add unit and integration tests because it's out of scope, but I normally add them
 - I have set the date format to yyyy-MM-dd HH:mm:ss, but could be changed in a constant
+- I have made the decision of not adding interfaces between layers because it will be an overkill. 
+I understand that many developers would prefer interfaces between layers in hexagonal or similar architectures,
+but it's a personal criteria or preference. There are many pros and cons of adding interfaces where are not
+needed like adding interfaces for JPA interfaces for instance.
+- I hope it's clear that I have preferred to not add interfaces in this task, but otherwise I have no
+problem in using them if that's the preference for the project.
 
 ### Sample request
 ```
