@@ -1,10 +1,8 @@
 package com.coolmushroom.retail.unit;
 
 import com.coolmushroom.retail.controller.request.GetPriceRequest;
-import com.coolmushroom.retail.controller.response.GetPriceResponse;
 import com.coolmushroom.retail.core.entity.Brand;
 import com.coolmushroom.retail.core.entity.Price;
-import com.coolmushroom.retail.core.exception.InvalidModel;
 import com.coolmushroom.retail.core.usecase.GetPrice;
 import com.coolmushroom.retail.service.PriceService;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,7 +11,6 @@ import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
